@@ -1,12 +1,27 @@
 package com.example.demo.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Dog {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
+	@Column(nullable = false)
 	private String name;
+
+	@Column(nullable = false)
 	private String breed;
+
+	@Column(nullable = false)
 	private Integer age;
-	
+
 	public Dog(Integer id, String name, String breed, Integer age) {
 		super();
 		this.id = id;
@@ -55,7 +70,5 @@ public class Dog {
 	public String toString() {
 		return "Dog [id=" + id + ", name=" + name + ", breed=" + breed + ", age=" + age + "]";
 	}
-	
-	
-	
+
 }
