@@ -61,19 +61,19 @@ public class DogController {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
-	@GetMapping("/getByName{name}")
+	@GetMapping("/getByName/{name}")
 	public ResponseEntity<List<Dog>> getDogByName(@PathVariable String name) {
 		List<Dog> found = this.service.getDogByName(name);
 		return ResponseEntity.ok(found);
 	}
 
-	@GetMapping("/getByAge{age}")
+	@GetMapping("/getByAge/{age}")
 	public ResponseEntity<List<Dog>> getDogByAge(@PathVariable Integer age) {
 		List<Dog> found = this.service.getDogByAge(age);
 		return ResponseEntity.ok(found);
 	}
 
-	@GetMapping("/getByBreed{breed}")
+	@GetMapping("/getByBreed/{breed}")
 	public ResponseEntity<List<Dog>> getDogByBreed(@PathVariable String breed) {
 		List<Dog> found = this.service.getDogByBreed(breed);
 		return ResponseEntity.ok(found);
